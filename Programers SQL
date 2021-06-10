@@ -12,3 +12,8 @@ SELECT DATETIME FROM ANIMAL_INS ORDER BY DATETIME DESC LIMIT 1
 https://programmers.co.kr/learn/courses/30/lessons/59407
 -- 코드를 입력하세요
 SELECT ANIMAL_ID FROM ANIMAL_INS WHERE NAME IS NOT NULL
+
+### 역순 정렬하기
+https://programmers.co.kr/learn/courses/30/lessons/59035
+-- 코드를 입력하세요
+SELECT NAME, DATETIME FROM ANIMAL_INS ORDER BY ANIMAL_ID DESC
