@@ -37,3 +37,8 @@ SELECT animal_id, name FROM animal_ins
 https://programmers.co.kr/learn/courses/30/lessons/59404
 -- sort [order by] two columns
 SELECT animal_id, name, datetime FROM animal_ins ORDER BY name, datetime DESC
+
+### 상위 N개 레코드
+https://programmers.co.kr/learn/courses/30/lessons/59405
+-- 코드를 입력하세요
+SELECT name FROM animal_ins ORDER BY datetime limit 1
