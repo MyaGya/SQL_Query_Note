@@ -53,7 +53,7 @@ https://programmers.co.kr/learn/courses/30/lessons/59040
 SELECT animal_type, count(*) as count  from animal_ins GROUP BY animal_type ORDER BY animal_type
 
 ### 루시와 엘라
--- 코드를 입력하세요
+-- 다중 이름 
 https://programmers.co.kr/learn/courses/30/lessons/59046
 SELECT animal_id, name, sex_upon_intake 
 FROM animal_ins
@@ -63,3 +63,9 @@ WHERE name = 'Lucy' or
     name = 'Rogan' or 
     name = 'Sabrina' or 
     name = 'Mitty'
+
+### 이름에 EL이 들어가는 동물 찾기
+-- 대소문자, LIKE 검색, 이름 검색
+SELECT animal_id, name FROM animal_ins 
+WHERE name LIKE '%EL%' AND animal_type = 'Dog'
+ORDER BY name
