@@ -79,3 +79,7 @@ ORDER BY name
 
 ### 최솟값 구하기
 SELECT MIN(datetime) AS '시간' FROM animal_ins
+
+### NULL 처리하기
+-- 널 치환, IFNULL
+SELECT animal_type, IFNULL(name, 'No name'), sex_upon_intake FROM animal_ins
