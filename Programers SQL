@@ -53,8 +53,8 @@ https://programmers.co.kr/learn/courses/30/lessons/59040
 SELECT animal_type, count(*) as count  from animal_ins GROUP BY animal_type ORDER BY animal_type
 
 ### 루시와 엘라
--- 다중 이름 
 https://programmers.co.kr/learn/courses/30/lessons/59046
+-- 다중 이름 
 SELECT animal_id, name, sex_upon_intake 
 FROM animal_ins
 WHERE name = 'Lucy' or 
@@ -65,12 +65,14 @@ WHERE name = 'Lucy' or
     name = 'Mitty'
 
 ### 이름에 EL이 들어가는 동물 찾기
+https://programmers.co.kr/learn/courses/30/lessons/59047
 -- 대소문자, LIKE 검색, 이름 검색
 SELECT animal_id, name FROM animal_ins 
 WHERE name LIKE '%EL%' AND animal_type = 'Dog'
 ORDER BY name
 
 ### 동명 동물 수 구하기
+https://programmers.co.kr/learn/courses/30/lessons/59041
 -- 다중 고전, HAVING
 SELECT name, COUNT(*) FROM animal_ins
 WHERE name IS NOT NULL
@@ -78,13 +80,16 @@ GROUP BY name HAVING COUNT(name) >= 2
 ORDER BY name
 
 ### 최솟값 구하기
+https://programmers.co.kr/learn/courses/30/lessons/59038
 SELECT MIN(datetime) AS '시간' FROM animal_ins
 
 ### NULL 처리하기
+https://programmers.co.kr/learn/courses/30/lessons/59410
 -- 널 치환, IFNULL
 SELECT animal_type, IFNULL(name, 'No name'), sex_upon_intake FROM animal_ins
 
 ### 입양 시각 구하기
+https://programmers.co.kr/learn/courses/30/lessons/59412
 -- 시간 관련 기능
 SELECT HOUR(datetime), COUNT(*) FROM animal_outs 
 WHERE HOUR(datetime) <= 19 AND HOUR(datetime) >= 9
@@ -92,6 +97,7 @@ GROUP BY HOUR(datetime)
 ORDER BY HOUR(datetime) 
 
 ### 중성화 여부 판단하기
+https://programmers.co.kr/learn/courses/30/lessons/59409
 -- 다중 조건, 
 SELECT animal_id,
        name,
@@ -101,9 +107,15 @@ SELECT animal_id,
 FROM ANIMAL_INS
 
 ### 동물 수 구하기
+https://programmers.co.kr/learn/courses/30/lessons/59406
 SELECT COUNT(*) FROM animal_ins
 
 ### 중복 제거하기
+https://programmers.co.kr/learn/courses/30/lessons/59408
 -- 중복 제거, 집계, DISTINCT
--- 코드를 입력하세요
 SELECT COUNT(DISTINCT(name)) FROM animal_ins WHERE name IS NOT NULL
+
+### DATETIME에서 DATE로 변경
+https://programmers.co.kr/learn/courses/30/lessons/59414
+-- 날짜, 집계함수를 사용한 데이터 값 추출, date_format
+SELECT animal_id, name, date_format(datetime, '%Y-%m-%d') FROM animal_ins ORDER BY animal_id
