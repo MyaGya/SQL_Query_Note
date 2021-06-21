@@ -90,3 +90,12 @@ SELECT HOUR(datetime), COUNT(*) FROM animal_outs
 WHERE HOUR(datetime) <= 19 AND HOUR(datetime) >= 9
 GROUP BY HOUR(datetime)
 ORDER BY HOUR(datetime) 
+
+### 중성화 여부 판단하기
+-- 다중 조건, 
+SELECT animal_id,
+       name,
+       CASE WHEN sex_upon_intake LIKE '%Neutered%' OR sex_upon_intake LIKE '%Spayed%'
+            THEN 'O'
+            ELSE 'X' END AS '중성화'
+FROM ANIMAL_INS
