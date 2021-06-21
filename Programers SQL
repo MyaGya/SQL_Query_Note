@@ -99,3 +99,6 @@ SELECT animal_id,
             THEN 'O'
             ELSE 'X' END AS '중성화'
 FROM ANIMAL_INS
+
+### 동물 수 구하기
+SELECT COUNT(*) FROM animal_ins
