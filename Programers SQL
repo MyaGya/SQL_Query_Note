@@ -102,3 +102,8 @@ FROM ANIMAL_INS
 
 ### 동물 수 구하기
 SELECT COUNT(*) FROM animal_ins
+
+### 중복 제거하기
+-- 중복 제거, 집계, DISTINCT
+-- 코드를 입력하세요
+SELECT COUNT(DISTINCT(name)) FROM animal_ins WHERE name IS NOT NULL
