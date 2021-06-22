@@ -119,3 +119,7 @@ SELECT COUNT(DISTINCT(name)) FROM animal_ins WHERE name IS NOT NULL
 https://programmers.co.kr/learn/courses/30/lessons/59414
 -- 날짜, 집계함수를 사용한 데이터 값 추출, date_format
 SELECT animal_id, name, date_format(datetime, '%Y-%m-%d') FROM animal_ins ORDER BY animal_id
+
+### 없어진 기록
+-- IN 사용, 다른 
+SELECT animal_id, name FROM animal_outs WHERE animal_id NOT IN (SELECT animal_id FROM animal_ins)
