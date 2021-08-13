@@ -123,3 +123,12 @@ SELECT animal_id, name, date_format(datetime, '%Y-%m-%d') FROM animal_ins ORDER 
 ### 없어진 기록
 -- IN 사용, 다른 
 SELECT animal_id, name FROM animal_outs WHERE animal_id NOT IN (SELECT animal_id FROM animal_ins)
+
+================= LEVEL3 ====================
+### 있었는데요 없었습니다
+https://programmers.co.kr/learn/courses/30/lessons/59043
+-- join
+SELECT animal_outs.animal_id, animal_outs.name
+FROM animal_outs JOIN animal_ins 
+    ON animal_outs.animal_id = animal_ins.animal_id AND animal_outs.DATETIME <= animal_ins.DATETIME
+ORDER BY animal_ins.datetime;
