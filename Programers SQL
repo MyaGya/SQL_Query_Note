@@ -132,3 +132,11 @@ SELECT animal_outs.animal_id, animal_outs.name
 FROM animal_outs JOIN animal_ins 
     ON animal_outs.animal_id = animal_ins.animal_id AND animal_outs.DATETIME <= animal_ins.DATETIME
 ORDER BY animal_ins.datetime;
+
+### 오랜 기간 보호한 동물
+https://programmers.co.kr/learn/courses/30/lessons/59044
+-- NOT IN
+SELECT NAME, DATETIME FROM ANIMAL_INS
+    WHERE ANIMAL_ID NOT IN (SELECT animal_id FROM ANIMAL_OUTS)
+    ORDER BY DATETIME 
+    LIMIT 3
